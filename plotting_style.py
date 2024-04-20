@@ -1,10 +1,17 @@
-## On your .ipynb, import this plotting_style by adding in and uncommenting the following lines:
-
+## WINDOWS: On your .ipynb, import this plotting_style by adding in and uncommenting the following lines:
 # import matplotlib.pyplot as plt
 # import sys
 # sys.path.append('C:/Users/Michael/Dropbox/AION/Projects')  # Replace with the relevant path that contains this script
 # from plotting_style import set_plotting_style
 # set_plotting_style()
+
+## MAC: On your .ipynb, import this plotting_style by adding in and uncommenting the following lines:
+# import matplotlib.pyplot as plt
+# import sys
+# sys.path.append('/Users/michael/Dropbox/AION/Projects')  # Replace with the relevant path that contains this script
+# from plotting_style import set_plotting_style
+# set_plotting_style()
+
 
 import matplotlib.pyplot as plt
 
