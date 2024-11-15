@@ -1,6 +1,0 @@
-# data-analysis-for-shelving
-
-
-
-
-
