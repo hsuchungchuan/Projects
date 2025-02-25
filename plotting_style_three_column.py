@@ -10,13 +10,13 @@ plt.rcParams.update({
 
 plt.rcParams["savefig.bbox"] = None
 plt.rcParams["figure.figsize"] = (5.9,3.0)
-plt.rcParams["figure.titlesize"] = 11 # this is only for plt.suptitle, i set it to be the same as the rest
+plt.rcParams["figure.titlesize"] = 10 # this is only for plt.suptitle, i set it to be the same as the rest
 
-plt.rcParams["axes.titlesize"] = 11 # control title size
-plt.rcParams["axes.labelsize"] = 11 # control x and y axis labels
+plt.rcParams["axes.titlesize"] = 10 # control title size
+plt.rcParams["axes.labelsize"] = 10 # control x and y axis labels
 plt.rcParams["axes.labelpad"] = 4.0 # distance between axis label and axis numbers
-plt.rcParams["xtick.labelsize"] = 11 # independent control of xlabel fontsize
-plt.rcParams["ytick.labelsize"] = 11 # independent control of ylabel fontsize
+plt.rcParams["xtick.labelsize"] = 10 # independent control of xlabel fontsize
+plt.rcParams["ytick.labelsize"] = 10 # independent control of ylabel fontsize
 
 plt.rcParams["legend.fontsize"] = 6 # control legend size, I set it to be slightly smaller than title/axes label
 # plt.rcParams["legend.facecolor"] = (0.9, 0.9, 0.9) # legend background color
