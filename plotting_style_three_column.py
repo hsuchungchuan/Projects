@@ -1,4 +1,4 @@
-# copy this chunk over to the code to run the three column plotting style
+# copy paste this code to the beginning of your script to set the plotting style for a three column figure
 
 from matplotlib import pyplot as plt
 
@@ -35,6 +35,7 @@ plt.rcParams["lines.linewidth"] = 1
 plt.rcParams["lines.markersize"] = 4 #data point size
 
 plt.rcParams["grid.linestyle"] = "--"
+plt.rcParams['axes.grid'] = True
 # plt.rcParams["grid.linewidth"] = 0.7
 
 # plt.rcParams["xtick.major.pad"] = 4.0 # distance between xticks dashes and xaxis numbers
