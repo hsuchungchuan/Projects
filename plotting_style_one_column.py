@@ -1,33 +1,32 @@
 # copy paste this code to the beginning of your script to set the plotting style for a one column figure
 
+# copy paste this code to the beginning of your script to set the plotting style for a three column figure
+
 from matplotlib import pyplot as plt
 
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Computer Modern Roman"],
-    # "figure.constrained_layout.use": True
+    "figure.constrained_layout.use": True
 })
 
-# plt.subplots_adjust(left=0.2, right=0.8, top=0.8, bottom=0.2) # remove unnecessary white space how i like it, this is manual very of use constrained_layout
-plt.rcParams["figure.autolayout"] = True # set to True if you want to use constrained_layout
-
 plt.rcParams["savefig.bbox"] = None
-plt.rcParams["figure.figsize"] = (5.9,4.2) # (width, height) in inches, change height but not width
-plt.rcParams["figure.titlesize"] = 11 # this is only for plt.suptitle, i set it to be the same as the rest
+plt.rcParams["figure.figsize"] = (5.9,3.5)  # (width, height) in inches, change height but not width
+plt.rcParams["figure.titlesize"] = 10 # this is only for plt.suptitle, i set it to be the same as the rest
 
-plt.rcParams["axes.titlesize"] = 11 # control title size
-plt.rcParams["axes.labelsize"] = 11 # control x and y axis labels
+plt.rcParams["axes.titlesize"] = 10 # control title size
+plt.rcParams["axes.labelsize"] = 10 # control x and y axis labels
 plt.rcParams["axes.labelpad"] = 4.0 # distance between axis label and axis numbers
-plt.rcParams["xtick.labelsize"] = 11 # independent control of xlabel fontsize
-plt.rcParams["ytick.labelsize"] = 11 # independent control of ylabel fontsize
+plt.rcParams["xtick.labelsize"] = 10 # independent control of xlabel fontsize
+plt.rcParams["ytick.labelsize"] = 10 # independent control of ylabel fontsize
 
 plt.rcParams["legend.fontsize"] = 7.5 # control legend size, I set it to be slightly smaller than title/axes label
 # plt.rcParams["legend.facecolor"] = (0.9, 0.9, 0.9) # legend background color
 # plt.rcParams["legend.edgecolor"] = (0, 0, 0) # legend border line color
 # plt.rcParams["legend.frameon"] = True # whether or not to draw a border around legend
 # plt.rcParams["legend.framealpha"] = 0.1 # legend background transparency
-plt.rcParams["legend.loc"] = "upper left" # default legend location
+plt.rcParams["legend.loc"] = "best" # default legend location
 plt.rcParams["legend.handletextpad"] = 0.8  # Horizontal space between legend point and text (default 0.8)
 plt.rcParams["legend.labelspacing"] = 0.6  # Vertical space between legend entries (default 0.5)
 # plt.rcParams["legend.columnspacing"] = 2.0  # Space between columns in multi-column legends
