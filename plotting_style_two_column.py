@@ -1,4 +1,4 @@
-# copy paste this code to the beginning of your script to set the plotting style for a three column figure
+# copy paste this code to the beginning of your script to set the plotting style for a two column figure
 
 from matplotlib import pyplot as plt
 
@@ -13,14 +13,14 @@ plt.rcParams.update({
 plt.rcParams["figure.autolayout"] = True # set to True if you want to use constrained_layout
 
 plt.rcParams["savefig.bbox"] = None
-plt.rcParams["figure.figsize"] = (5.9,4.2)
-plt.rcParams["figure.titlesize"] = 11 # this is only for plt.suptitle, i set it to be the same as the rest
+plt.rcParams["figure.figsize"] = (5.9,3)
+plt.rcParams["figure.titlesize"] = 10 # this is only for plt.suptitle, i set it to be the same as the rest
 
-plt.rcParams["axes.titlesize"] = 11 # control title size
-plt.rcParams["axes.labelsize"] = 11 # control x and y axis labels
+plt.rcParams["axes.titlesize"] = 10 # control title size
+plt.rcParams["axes.labelsize"] = 10 # control x and y axis labels
 plt.rcParams["axes.labelpad"] = 4.0 # distance between axis label and axis numbers
-plt.rcParams["xtick.labelsize"] = 11 # independent control of xlabel fontsize
-plt.rcParams["ytick.labelsize"] = 11 # independent control of ylabel fontsize
+plt.rcParams["xtick.labelsize"] = 10 # independent control of xlabel fontsize
+plt.rcParams["ytick.labelsize"] = 10 # independent control of ylabel fontsize
 
 plt.rcParams["legend.fontsize"] = 7.5 # control legend size, I set it to be slightly smaller than title/axes label
 # plt.rcParams["legend.facecolor"] = (0.9, 0.9, 0.9) # legend background color
@@ -48,3 +48,10 @@ plt.rcParams['axes.grid'] = True
 # plt.rcParams["ytick.major.pad"] = 4.0 # distance between yticks dashes and yaxis numbers
 # plt.rcParams["ytick.major.size"] = 3.0
 # plt.rcParams["ytick.major.width"] = 0.7
+
+
+
+
+
+# plot two figures side by side
+# fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
