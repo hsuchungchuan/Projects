@@ -1,4 +1,4 @@
-# copy paste this code to the beginning of your script to set the plotting style for a three column figure
+# copy paste this code to the beginning of your script to set the plotting style for a one column figure
 
 from matplotlib import pyplot as plt
 
@@ -13,7 +13,7 @@ plt.rcParams.update({
 plt.rcParams["figure.autolayout"] = True # set to True if you want to use constrained_layout
 
 plt.rcParams["savefig.bbox"] = None
-plt.rcParams["figure.figsize"] = (5.9,4.2)
+plt.rcParams["figure.figsize"] = (5.9,4.2) # (width, height) in inches, change height but not width
 plt.rcParams["figure.titlesize"] = 11 # this is only for plt.suptitle, i set it to be the same as the rest
 
 plt.rcParams["axes.titlesize"] = 11 # control title size
