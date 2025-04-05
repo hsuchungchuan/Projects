@@ -5,8 +5,12 @@ from matplotlib import pyplot as plt
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
-    "font.serif": ["Computer Modern Roman"]
+    "font.serif": ["Computer Modern Roman"],
+    # "figure.constrained_layout.use": True
 })
+
+# plt.subplots_adjust(left=0.2, right=0.8, top=0.8, bottom=0.2) # remove unnecessary white space how i like it, this is manual very of use constrained_layout
+plt.rcParams["figure.autolayout"] = True # set to True if you want to use constrained_layout
 
 plt.rcParams["savefig.bbox"] = None
 plt.rcParams["figure.figsize"] = (5.9,3.0)
@@ -44,3 +48,6 @@ plt.rcParams['axes.grid'] = True
 # plt.rcParams["ytick.major.pad"] = 4.0 # distance between yticks dashes and yaxis numbers
 # plt.rcParams["ytick.major.size"] = 3.0
 # plt.rcParams["ytick.major.width"] = 0.7
+
+# plot three figures side by side
+# fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharey=True)
