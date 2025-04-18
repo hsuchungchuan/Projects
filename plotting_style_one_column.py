@@ -1,7 +1,5 @@
 # copy paste this code to the beginning of your script to set the plotting style for a one column figure
 
-# copy paste this code to the beginning of your script to set the plotting style for a three column figure
-
 from matplotlib import pyplot as plt
 
 plt.rcParams.update({
