@@ -9,8 +9,7 @@ plt.rcParams.update({
     # "figure.constrained_layout.use": True
 })
 
-# plt.subplots_adjust(left=0.2, right=0.8, top=0.8, bottom=0.2) # remove unnecessary white space how i like it, this is manual very of use constrained_layout
-plt.rcParams["figure.autolayout"] = True # set to True if you want to use constrained_layout
+plt.rcParams["figure.autolayout"] = False # set to True if you want to use constrained_layout
 
 plt.rcParams["savefig.bbox"] = None
 plt.rcParams["figure.figsize"] = (5.9,3)
@@ -54,4 +53,8 @@ plt.rcParams['axes.grid'] = True
 
 
 # plot two figures side by side
-# fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+# fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True, constrained_layout=True)
+# plt.subplots_adjust(left=0.2, right=0.8, top=0.8, bottom=0.2) # remove unnecessary white space how i like it, this is manual very of use constrained_layout
+
+# That warning is because matplotlib’s default layout engine has changed in recent versions to use constrained_layout, which is incompatible with subplots_adjust and tight_layout. If you try to use plt.subplots_adjust when constrained_layout=True, matplotlib will raise that warning and ignore the call.
+# If you're manually adjusting spacing, disable constrained_layout when you create the figure:
