@@ -12,7 +12,7 @@ plt.rcParams.update({
 plt.rcParams["figure.autolayout"] = False # set to True if you want to use constrained_layout
 
 plt.rcParams["savefig.bbox"] = None
-plt.rcParams["figure.figsize"] = (5.9,3)
+plt.rcParams["figure.figsize"] = (5.9,2.5)
 plt.rcParams["figure.titlesize"] = 10 # this is only for plt.suptitle, i set it to be the same as the rest
 
 plt.rcParams["axes.titlesize"] = 10 # control title size
@@ -34,8 +34,13 @@ plt.rcParams["legend.labelspacing"] = 0.6  # Vertical space between legend entri
 # plt.rcParams["legend.handlelength"] = 2.0  # Length of legend marker lines
 
 plt.rcParams["lines.linewidth"] = 1
-# plt.rcParams["lines.markeredgewidth"] = 0.7
-plt.rcParams["lines.markersize"] = 4 #data point size
+plt.rcParams["lines.markersize"] = 6 #data point size
+plt.rcParams["lines.markeredgewidth"] = 1.5 # width of the edge of the marker
+plt.rcParams["lines.markeredgecolor"] = "black" # color of the edge of the marker
+plt.rcParams["lines.markerfacecolor"] = "dodgerblue" # color of the inside of the marker
+plt.rcParams["lines.marker"] = "o" # marker type, see https://matplotlib.org/stable/api/markers_api.html for all options
+plt.rcParams["lines.color"] = "black" # color of the line
+# CHOOSE NICE COLOR FOR DARK MARKER EDGEWIDTH FROM "dodgerblue","mediumseagreen","indianred","mediumpurple","slateblue","darkorange","peru","goldenrod"
 
 plt.rcParams["grid.linestyle"] = "--"
 plt.rcParams['axes.grid'] = True
