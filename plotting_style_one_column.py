@@ -32,12 +32,9 @@ plt.rcParams["legend.labelspacing"] = 0.6  # Vertical space between legend entri
 # plt.rcParams["legend.handlelength"] = 2.0  # Length of legend marker lines
 
 plt.rcParams["lines.linewidth"] = 1
-plt.rcParams["lines.markeredgewidth"] = 1.5
 plt.rcParams["lines.markersize"] = 6 #data point size
-plt.rcParams["lines.marker"] = "o" # data point shape
-plt.rcParams["lines.linestyle"] = "-" # data line style
-plt.rcParams["lines.markeredgecolor"]= "black" # default color for lines and markers
-# CHOOSE NICE COLOR FROM "dodgerblue","mediumseagreen","indianred","mediumpurple","slateblue","darkorange","peru","goldenrod"
+# plt.rcParams["lines.markeredgewidth"] = 1.5 # width of the edge of the marker
+# CHOOSE NICE COLOR FOR DARK MARKER EDGEWIDTH FROM "dodgerblue","mediumseagreen","indianred","mediumpurple","slateblue","darkorange","peru","goldenrod"
 
 plt.rcParams["grid.linestyle"] = "--"
 plt.rcParams['axes.grid'] = True
