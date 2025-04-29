@@ -35,12 +35,16 @@ plt.rcParams["legend.labelspacing"] = 0.6  # Vertical space between legend entri
 
 plt.rcParams["lines.linewidth"] = 1
 plt.rcParams["lines.markersize"] = 6 #data point size
-plt.rcParams["lines.markeredgewidth"] = 1.5 # width of the edge of the marker
-plt.rcParams["lines.markeredgecolor"] = "black" # color of the edge of the marker
-plt.rcParams["lines.markerfacecolor"] = "dodgerblue" # color of the inside of the marker
-plt.rcParams["lines.marker"] = "o" # marker type, see https://matplotlib.org/stable/api/markers_api.html for all options
-plt.rcParams["lines.color"] = "black" # color of the line
-# CHOOSE NICE COLOR FOR DARK MARKER EDGEWIDTH FROM "dodgerblue","mediumseagreen","indianred","mediumpurple","slateblue","darkorange","peru","goldenrod"
+
+# CHOOSE NICE COLOR FOR DARK MARKER EDGEWIDTH FROM "dodgerblue","mediumseagreen","crimson","mediumpurple","slateblue","darkorange","peru","goldenrod"
+# plt.rcParams["lines.linewidth"] = 1
+# plt.rcParams["lines.markersize"] = 6 #data point size
+# plt.rcParams["lines.markeredgewidth"] = 1.5 # width of the edge of the marker
+# plt.rcParams["lines.markeredgecolor"] = "black" # color of the edge of the marker
+# plt.rcParams["lines.markerfacecolor"] = "dodgerblue" # color of the inside of the marker
+# plt.rcParams["lines.marker"] = "o" # marker type, see https://matplotlib.org/stable/api/markers_api.html for all options
+# plt.rcParams["lines.color"] = "black" # color of the line
+# # CHOOSE NICE COLOR FOR DARK MARKER EDGEWIDTH FROM "dodgerblue","mediumseagreen","crimson","mediumpurple","slateblue","darkorange","peru","goldenrod"
 
 plt.rcParams["grid.linestyle"] = "--"
 plt.rcParams['axes.grid'] = True
