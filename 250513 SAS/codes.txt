@@ -1,0 +1,94 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+# 1. 加载数据
+x = np.loadtxt('/Users/snz/Downloads/Cambridge/Absorption spec/x8.txt')
+y = np.loadtxt('/Users/snz/Downloads/Cambridge/Absorption spec/y2.txt')
+#x1 = np.loadtxt('/Users/snz/Downloads/Cambridge/Absorption spec/x9.txt')
+y1 = np.loadtxt('/Users/snz/Downloads/Cambridge/Absorption spec/y1.txt')
+# 新增附件数据
+x4 = np.loadtxt('/Users/snz/Downloads/Cambridge/Absorption spec/x4.txt')  # 确保路径正确
+yy = np.loadtxt('/Users/snz/Downloads/Cambridge/Absorption spec/yy.txt')   # 确保路径正确
+
+# 2. 定义带背景的单峰洛伦兹函数
+def lorentzian(x, x0, gamma, A, d):
+    return A * gamma / (gamma**2 + (x - x0)**2) + d
+
+# 3. 各峰的区间和初始猜测
+segments = [
+    {'range': (13, 19), 'p0': [18.0, 2.0, 20.0,  np.median(y)]},  # 峰1
+    {'range': (27, 35), 'p0': [29.5, 1.5, 23.0, np.median(y)]},  # 峰2
+    {'range': (37, 42), 'p0': [39.5, 1.5, 23.0, np.median(y)]},  # 峰3
+]
+
+results = []
+
+# 4. 对每个区间分别拟合
+for idx, seg in enumerate(segments, 1):
+    lo, hi = seg['range']
+    mask = (x >= lo) & (x <= hi)
+    x_seg = x[mask]
+    y_seg = y[mask]
+    
+    popt, pcov = curve_fit(lorentzian, x_seg, y_seg, p0=seg['p0'])
+    perr = np.sqrt(np.diag(pcov))
+    results.append((x_seg, popt, perr))
+    
+    # 打印拟合结果
+    x0_fit, gamma_fit, A_fit, d_fit = popt
+    x0_err, gamma_err, A_err, d_err = perr
+    print(f"Peak {idx} （{lo}≤x≤{hi}）：")
+    print(f"  x0 = {x0_fit:.3f} ± {x0_err:.3f}")
+    print(f"  γ  = {gamma_fit:.3f} ± {gamma_err:.3f}")
+    print(f"  A  = {A_fit:.2f} ± {A_err:.2f}")
+    print(f"  d  = {d_fit:.2f} ± {d_err:.2f}")
+    print('-'*40)
+
+# ... 前面的加载数据和拟合代码保持不变 ...
+
+# ... 前面的加载数据和拟合代码保持不变 ...
+
+# 5. 创建双Y轴图
+fig, ax1 = plt.subplots(figsize=(10,6))
+label_fontsize = 20    # 坐标轴标签字体大小
+tick_fontsize = 16 
+# 第一个Y轴（左侧）- 原始数据和拟合曲线
+ax1.scatter(x, y, s=10, color='gray', alpha=0.6, label='原始数据 (x,y)')
+colors = ['r','g','b']
+for i, (x_seg, popt, _) in enumerate(results):
+    y_fit = lorentzian(x_seg, *popt)
+    ax1.plot(x_seg, y_fit, '-', color=colors[i], lw=2,
+             label=f'Peak {i+1} 拟合 ({segments[i]["range"][0]}–{segments[i]["range"][1]})')
+ax1.set_xlabel('Scanning time (s)',fontsize=label_fontsize)
+ax1.set_ylabel('Photodiode voltage (mV)', color='black',fontsize=label_fontsize)
+ax1.tick_params(axis='y', labelcolor='black',labelsize=tick_fontsize)
+ax1.tick_params(axis='x', labelcolor='black',labelsize=tick_fontsize)
+# 第二个Y轴（右侧）- 附加数据
+ax2 = ax1.twinx()
+ax2.scatter(x, y1, s=2, color='blue', alpha=0.1, marker='x', 
+           label='附加数据 (x,y1)', linewidths=1)
+ax2.set_ylabel('Scanning voltage(V)', color='blue',fontsize=label_fontsize)
+ax2.tick_params(axis='y', labelcolor='purple',labelsize=tick_fontsize)
+ax2.set_ylim(-1, 1.5)  # 替换为你需要的数值
+
+# 合并图例
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+#ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
+
+#plt.title('双Y轴数据对比')
+plt.tight_layout()
+
+plt.figure(figsize=(10,6))  # 新建一个画布
+plt.scatter(x4, yy, s=10, color='green', alpha=0.7, label='附件数据 (x4, yy)')
+plt.xlabel('Scanning time (s)', fontsize=label_fontsize)
+plt.ylabel('Laser frequency from WM (GHz)', fontsize=label_fontsize)
+#plt.title('附件数据单独图', fontsize=18)
+plt.xticks(fontsize=tick_fontsize)
+plt.yticks(fontsize=tick_fontsize)
+#plt.legend(fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+
+plt.show()
