@@ -22,7 +22,7 @@ plt.rcParams["axes.labelpad"] = 4.0 # distance between axis label and axis numbe
 plt.rcParams["xtick.labelsize"] = 10 # independent control of xlabel fontsize
 plt.rcParams["ytick.labelsize"] = 10 # independent control of ylabel fontsize
 
-plt.rcParams["legend.fontsize"] = 6 # control legend size, I set it to be slightly smaller than title/axes label
+plt.rcParams["legend.fontsize"] = 7.5 # control legend size, I set it to be slightly smaller than title/axes label
 # plt.rcParams["legend.facecolor"] = (0.9, 0.9, 0.9) # legend background color
 # plt.rcParams["legend.edgecolor"] = (0, 0, 0) # legend border line color
 # plt.rcParams["legend.frameon"] = True # whether or not to draw a border around legend
@@ -61,4 +61,4 @@ plt.rcParams['axes.grid'] = True
 # plt.rcParams["ytick.major.width"] = 0.7
 
 # plot three figures side by side
-# fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharey=True)
+# fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharey=True, constrained_layout=True)
